@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Enfermería - Hospitalización Domiciliaria</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans p-3 sm:p-6">
+
+    <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+        
+        <!-- ENCABEZADO INSTITUCIONAL -->
+        <header class="bg-sky-900 text-white p-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <p class="text-xs uppercase tracking-wider text-sky-200 font-semibold">Servicio de Salud Viña del Mar Quillota</p>
+                <h1 class="text-xl font-bold">Hospital Dr. Gustavo Fricke</h1>
+                <p class="text-sm text-sky-100">Unidad de Hospitalización Domiciliaria — Registro de Enfermería</p>
+            </div>
+            <div class="bg-sky-800/80 px-4 py-2 rounded-lg border border-sky-700 text-right w-full md:w-auto flex justify-between md:block items-center">
+                <span class="text-xs text-sky-200">Fecha del Registro</span>
+                <span class="font-mono font-medium text-sm text-white block">30/07/2026</span>
+            </div>
+        </header>
+
+        <form class="p-4 sm:p-8 space-y-8">
+
+            <!-- 1. IDENTIFICACIÓN Y TIEMPOS DE VISITA -->
+            <section>
+                <h2 class="text-base font-bold text-sky-900 border-b border-sky-200 pb-2 mb-4">
+                    1. Datos del Paciente y Visita
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Nombre Completo</label>
+                        <input type="text" placeholder="Ej: Juan Pérez González" class="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">RUN <span class="text-rose-500">*</span></label>
+                        <input type="text" required placeholder="12.345.678-K" class="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Edad</label>
+                        <input type="number" inputmode="numeric" placeholder="Años" class="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Diagnóstico Médico</label>
+                        <input type="text" placeholder="Diagnóstico principal/secundario" class="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Hora Inicio Visita</label>
+                        <input type="time" class="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Hora Término Visita</label>
+                        <input type="time" class="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none">
+                    </div>
+
+                    <div class="md:col-span-4">
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Objetivo de la Hospitalización Domiciliaria (HD)</label>
+                        <input type="text" placeholder="Ej: Tratamiento antibiótico EV completo, manejo de curación avanzada..." class="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. CONTROL DE SIGNOS VITALES (OPTIMIZADO TABLET) -->
+            <section class="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-200">
+                <h2 class="text-base font-bold text-sky-900 border-b border-slate-200 pb-2 mb-4">
+                    2. Control de Signos Vitales
+                </h2>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-9 gap-3">
+                    
+                    <!-- PAS SEPARADO -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">P. Sistólica</label>
+                        <input type="number" inputmode="numeric" placeholder="120" class="w-full px-2 py-2 border border-slate-300 rounded-lg text-base font-semibold text-center focus:ring-2 focus:ring-sky-500 focus:outline-none">
+                        <span class="text-[10px] text-slate-400 block text-center mt-0.5">PAS (mmHg)</span>
+                    </div>
+
+                    <!-- PAD SEPARADO -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">P. Diastólica</label>
+                        <input type="number" inputmode="numeric" placeholder="80" class="w-full px-2 py-2 border border-slate-300 rounded-lg text-base font-semibold text-center focus:ring-2 focus:ring-sky-500 focus:outline-none">
+                        <span class="text-[10px] text-slate-400 block text-center mt-0.5">PAD (mmHg)</span>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">F. Cardíaca</label>
+                        <input type="number" inputmode="numeric" placeholder="75" class="w-full px-2 py-2 border border-slate-300 rounded-lg text-sm text-center">
+                        <span class="text-[10px] text-slate-400 block text-center mt-0.5">FC (LPM)</span>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Sat. O₂</label>
+                        <input type="number" inputmode="numeric" placeholder="98" class="w-full px-2 py-2 border border-slate-300 rounded-lg text-sm text-center">
+                        <span class="text-[10px] text-slate-400 block text-center mt-0.5">%</span>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Temperatura</label>
+                        <input type="number" step="0.1" inputmode="decimal" placeholder="36.5" class="w-full px-2 py-2 border border-slate-300 rounded-lg text-sm text-center">
+                        <span class="text-[10px] text-slate-400 block text-center mt-0.5">°C</span>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">HGT (Glicemia)</label>
+                        <input type="number" inputmode="numeric" placeholder="105" class="w-full px-2 py-2 border border-slate-300 rounded-lg text-sm text-center">
+                        <span class="text-[10px] text-slate-400 block text-center mt-0.5">mg/dL</span>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">EVA (Dolor)</label>
+                        <select class="w-full px-2 py-2 border border-slate-300 rounded-lg text-sm text-center bg-white h-[42px]">
+                            <option value="">-</option>
+                            <option value="0">0</option><option value="1">1</option><option value="2">2</option>
+                            <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                            <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+                            <option value="9">9</option><option value="10">10</option>
+                        </select>
+                        <span class="text-[10px] text-slate-400 block text-center mt-0.5">Escala 0-10</span>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Diuresis</label>
+                        <input type="text" placeholder="(+) / ml" class="w-full px-2 py-2 border border-slate-300 rounded-lg text-sm text-center">
+                        <span class="text-[10px] text-slate-400 block text-center mt-0.5">Caract. / Vol.</span>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Deposiciones</label>
+                        <input type="text" placeholder="(+) / Tipo" class="w-full px-2 py-2 border border-slate-300 rounded-lg text-sm text-center">
+                        <span class="text-[10px] text-slate-400 block text-center mt-0.5">Frec. / Aspecto</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. EVALUACIÓN Y DISPOSITIVOS INVASIVOS -->
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h2 class="text-base font-bold text-sky-900 border-b border-sky-200 pb-2 mb-3">
+                        3. Estado General y Examen Físico
+                    </h2>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">Estado General</label>
+                            <input type="text" placeholder="Ej: Vigil, orientado, febril, hemodinámicamente estable..." class="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">Examen Físico Céfalo-Caudal / Segmentario</label>
+                            <textarea rows="3" placeholder="Hallazgos relevantes en piel, tórax, abdomen, extremidades..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none resize-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-base font-bold text-sky-900 border-b border-sky-200 pb-2 mb-3">
+                         Dispositivos Invasivos <span class="text-xs font-normal text-slate-500">(Opcional)</span>
+                    </h2>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Detalle de Dispositivos Activos</label>
+                        <textarea rows="5" placeholder="Ej: Vía Venosa Periférica #20 N° brazo izq. (Instalación: 28/07, curación limpia) / Sonda Foley N°16 (Permeable, diuresis clara)..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none resize-none"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. PROCEDIMIENTOS REALIZADOS -->
+            <section>
+                <h2 class="text-base font-bold text-sky-900 border-b border-sky-200 pb-2 mb-4">
+                    4. Procedimientos Realizados
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-3 border border-slate-200 rounded-lg bg-slate-50/50">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Exámenes Realizados / Tomas de Muestra</label>
+                        <textarea rows="2" placeholder="Ej: Toma de muestra hemograma y electrolitos..." class="w-full px-3 py-2 border border-slate-300 rounded-md text-sm bg-white"></textarea>
+                    </div>
+
+                    <div class="p-3 border border-slate-200 rounded-lg bg-slate-50/50">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Medicamentos Administrados en Visita</label>
+                        <textarea rows="2" placeholder="Ej: Ceftriaxona 2g EV diluido en 100cc SF..." class="w-full px-3 py-2 border border-slate-300 rounded-md text-sm bg-white"></textarea>
+                    </div>
+
+                    <div class="p-3 border border-slate-200 rounded-lg bg-slate-50/50">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Medicamentos Entregados al Paciente / Cuidador</label>
+                        <textarea rows="2" placeholder="Ej: Paracetamol 1g VO (10 comprimidos)..." class="w-full px-3 py-2 border border-slate-300 rounded-md text-sm bg-white"></textarea>
+                    </div>
+
+                    <div class="p-3 border border-slate-200 rounded-lg bg-slate-50/50">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Otros Procedimientos / Curaciones</label>
+                        <textarea rows="2" placeholder="Ej: Curación plana UPP sacra con SF..." class="w-full px-3 py-2 border border-slate-300 rounded-md text-sm bg-white"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. OBSERVACIONES Y PLAN -->
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h2 class="text-base font-bold text-sky-900 border-b border-sky-200 pb-2 mb-3">
+                        5. Observaciones
+                    </h2>
+                    <textarea rows="3" placeholder="Incidencias durante la visita, adherencia del cuidador, condiciones del entorno..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none resize-none"></textarea>
+                </div>
+
+                <div>
+                    <h2 class="text-base font-bold text-sky-900 border-b border-sky-200 pb-2 mb-3">
+                        6. Plan de Enfermería
+                    </h2>
+                    <textarea rows="3" placeholder="Ej: Continuar esquema EV según indicación. Control de signos por cuidador. Próxima visita programada para mañana AM..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none resize-none"></textarea>
+                </div>
+            </section>
+
+            <!-- ACCIONES ADAPTADAS A TABLET (BOTONES MÁS GRANDES) -->
+            <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row justify-end gap-3">
+                <button type="button" class="w-full sm:w-auto px-6 py-3 rounded-lg text-sm font-semibold border border-slate-300 text-slate-600 hover:bg-slate-100 active:bg-slate-200">
+                    Guardar Borrador
+                </button>
+                <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded-lg text-sm font-semibold bg-sky-800 hover:bg-sky-900 active:bg-sky-950 text-white shadow-sm">
+                    Finalizar y Registrar
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
